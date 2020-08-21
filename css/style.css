@@ -1,0 +1,39 @@
+html, body{
+    background-color: #eae7dc;
+    box-sizing: border-box;
+}
+
+#bgcolor {
+  background-color: #eae7dc;
+  font-weight: bold;
+  text-decoration-color: indianred;
+}
+
+#search{
+    border-radius: 10px;
+}
+#searchbutton {
+  background-color: crimson;
+  border-radius: 10px;
+  border: none;
+}
+
+#searchbutton:hover{
+    background-color: green;
+}
+
+.nav-item:hover{
+    border-radius: 10px;
+    font-style: oblique;
+}
+
+
+.fa-comments, .fa-thumbs-up{
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+p{
+    font-size: 20px;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}

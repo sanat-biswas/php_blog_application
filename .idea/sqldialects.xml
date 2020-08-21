@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/ajaxPhp/commentFetch.php" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/ajaxPhp/commentInsertAjax.php" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/ajaxPhp/dislikeAjax.php" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/ajaxPhp/fetch_likes_dislikes.php" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/ajaxPhp/likeAjax.php" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/ajaxPhp/replyInsertAjax.php" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/articleFetch.php" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/confirmRegisterDetails.php" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/dashboard.php" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/dislikes.php" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/forgetPassword.php" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/insertComments.php" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/like.php" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/login.php" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/replycomment.php" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/showContent.php" dialect="MySQL" />
+  </component>
+</project>

@@ -1,0 +1,46 @@
+body{
+    font-size: 22px;
+}
+
+.hideform{
+
+    border-radius: 10px;
+    font-size: 18px;
+    display: none;
+}
+
+
+#commentForm{
+    display: none;
+}
+
+.replyForm{
+    display: none;
+    /*margin-left: 50px;*/
+}
+
+
+#arrow_img{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+#toggleComments{
+    cursor: default;
+}
+
+.font_name{
+    font-family: "Comic Sans MS", Consolas, sans-serif;
+    font-style: italic;
+}
+
+#like_button, #dislike_button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+

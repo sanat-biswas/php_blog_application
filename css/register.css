@@ -1,0 +1,23 @@
+.hasAccountText span{
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#registerForm, #loginForm{
+    display: none;
+}
+
+#registerForm, #loginForm{
+    float: inherit;
+}
+
+#emailinfo{
+  font-size: 12px;
+}
+
+.forgetPassword{
+    font-weight: bold;
+    font-size: 14px;
+    /* cursor: pointer; */
+}

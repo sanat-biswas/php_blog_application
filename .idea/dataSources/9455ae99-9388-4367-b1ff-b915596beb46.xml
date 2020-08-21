@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="blog@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+    <root id="1"/>
+    <schema id="2" parent="1" name="blog">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="comments"/>
+    <schema id="4" parent="1" name="dbmis"/>
+    <schema id="5" parent="1" name="information_schema"/>
+    <schema id="6" parent="1" name="mysql"/>
+    <schema id="7" parent="1" name="performance_schema"/>
+    <schema id="8" parent="1" name="phpmyadmin"/>
+    <schema id="9" parent="1" name="php_specials"/>
+    <schema id="10" parent="1" name="session"/>
+    <schema id="11" parent="1" name="slotify"/>
+    <schema id="12" parent="1" name="songgenre"/>
+    <schema id="13" parent="1" name="student"/>
+    <schema id="14" parent="1" name="test"/>
+    <schema id="15" parent="1" name="user"/>
+    <schema id="16" parent="1" name="data"/>
+    <table id="17" parent="2" name="article"/>
+    <table id="18" parent="2" name="comments"/>
+    <table id="19" parent="2" name="cookies"/>
+    <table id="20" parent="2" name="dislike_table"/>
+    <table id="21" parent="2" name="like_table"/>
+    <table id="22" parent="2" name="register"/>
+    <table id="23" parent="2" name="reply"/>
+    <column id="24" parent="17" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="25" parent="17" name="articlename">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="26" parent="17" name="articlecontent">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="27" parent="17" name="imagepath">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="17" name="userid">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="29" parent="17" name="userid">
+      <ColNames>userid</ColNames>
+    </index>
+    <key id="30" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="31" parent="17" name="article_ibfk_1">
+      <ColNames>userid</ColNames>
+      <RefSchemaName>blog</RefSchemaName>
+      <RefTableName>register</RefTableName>
+      <RefColNames>userid</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="32" parent="18" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="33" parent="18" name="comment">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="34" parent="18" name="loginid">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="35" parent="18" name="articleid">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="36" parent="18" name="createdon">
+      <Position>5</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <column id="37" parent="18" name="updatedon">
+      <Position>6</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0000-00-00 00:00:00&apos;</DefaultExpression>
+    </column>
+    <index id="38" parent="18" name="articleid">
+      <ColNames>articleid</ColNames>
+    </index>
+    <index id="39" parent="18" name="loginid">
+      <ColNames>loginid</ColNames>
+    </index>
+    <key id="40" parent="18" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="41" parent="18" name="comments_ibfk_1">
+      <ColNames>loginid</ColNames>
+      <RefSchemaName>blog</RefSchemaName>
+      <RefTableName>register</RefTableName>
+      <RefColNames>userid</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="42" parent="18" name="comments_ibfk_2">
+      <ColNames>articleid</ColNames>
+      <RefSchemaName>blog</RefSchemaName>
+      <RefTableName>article</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="43" parent="19" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="44" parent="19" name="cookie">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="45" parent="19" name="username">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="46" parent="19" name="createAt">
+      <Position>4</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <column id="47" parent="19" name="updatedAt">
+      <Position>5</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <key id="48" parent="19" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="49" parent="20" name="dislike_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="50" parent="20" name="dislikes">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="51" parent="20" name="loginid">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="52" parent="20" name="articleid">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="53" parent="20" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>dislike_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="54" parent="21" name="like_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="55" parent="21" name="likes">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="56" parent="21" name="loginid">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="57" parent="21" name="articleid">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="58" parent="21" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>like_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="59" parent="22" name="userid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="60" parent="22" name="username">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="61" parent="22" name="firstname">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="62" parent="22" name="lastname">
+      <Position>4</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="63" parent="22" name="email">
+      <Position>5</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="64" parent="22" name="password">
+      <Position>6</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <key id="65" parent="22" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>userid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="66" parent="23" name="commentid">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="67" parent="23" name="loginid">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="68" parent="23" name="articleid">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="69" parent="23" name="replies">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="70" parent="23" name="createdon">
+      <Position>6</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <column id="71" parent="23" name="updatedon">
+      <Position>7</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0000-00-00 00:00:00&apos;</DefaultExpression>
+    </column>
+    <column id="72" parent="23" name="replyid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <index id="73" parent="23" name="commentid">
+      <ColNames>commentid</ColNames>
+    </index>
+    <index id="74" parent="23" name="loginid">
+      <ColNames>loginid</ColNames>
+    </index>
+    <key id="75" parent="23" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>replyid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="76" parent="23" name="reply_ibfk_1">
+      <ColNames>loginid</ColNames>
+      <RefSchemaName>blog</RefSchemaName>
+      <RefTableName>register</RefTableName>
+      <RefColNames>userid</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="77" parent="23" name="reply_ibfk_2">
+      <ColNames>commentid</ColNames>
+      <RefSchemaName>blog</RefSchemaName>
+      <RefTableName>comments</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+  </database-model>
+</dataSource>
