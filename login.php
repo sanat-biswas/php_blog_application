@@ -6,8 +6,8 @@ session_start();
 //login form
 
   if (isset($_POST['loginButton'])) {
-      $userName = $_POST['userName'];
-      $password = $_POST['password'];
+      $userName = mysqli_real_escape_string($con, $_POST['userName']);
+      $password = mysqli_real_escape_string($con, $_POST['password']);
 
       $encryptPassword = md5($password);
       

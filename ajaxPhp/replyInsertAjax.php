@@ -18,12 +18,16 @@ if (isset($_POST['commentReply']) && !empty($_SESSION['loginid'])) {
     if($replyQuery){
         $response = [
             "success" => true,
-            "message" => "Reply inserted successfully"
+            "message" => "Reply inserted successfully",
+            "reply_id" => $commentId,
+            "reply" => $replyComment
         ];
     }else{
         $response = [
             "success" => false,
-            "message" => "Please Try Again"
+            "message" => "Please Try Again",
+            "reply_id" => null,
+            "reply" => null
         ];
     }
     echo json_encode($response);

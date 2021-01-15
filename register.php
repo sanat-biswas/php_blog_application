@@ -6,21 +6,21 @@ session_start();
 
   //registration form
   if (isset($_POST['registerButton'])) {
-      $userName = $_POST['userName'];
+      $userName = mysqli_real_escape_string($con, $_POST['userName']);
       $_SESSION['userName'] = $userName;
     
-      $firstName = $_POST['firstName'];
+      $firstName = mysqli_real_escape_string($con, $_POST['firstName']);
       $_SESSION['firstName'] = $firstName;
 
-      $lastName = $_POST['lastName'];
+      $lastName = mysqli_real_escape_string($con, $_POST['lastName']);
       $_SESSION['lastName'] = $lastName;
 
-      $email = $_POST['email'];
+      $email = mysqli_real_escape_string($con, $_POST['email']);
       $_SESSION['email'] = $email;
 
-      $password = $_POST['password'];
+      $password = mysqli_real_escape_string($con, $_POST['password']);
     
-      $confirmPassword = $_POST['confirmPassword'];
+      $confirmPassword = mysqli_real_escape_string($con, $_POST['confirmPassword']);
 
       $otp = rand(100000, 999999);
 

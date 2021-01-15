@@ -7,7 +7,30 @@
     <bookmark url="file://$PROJECT_DIR$/js/formhide.js" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d58ed997-65ed-4dd7-a397-39a270cd7d9a" name="Default" comment="" />
+    <list default="true" id="d58ed997-65ed-4dd7-a397-39a270cd7d9a" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ajaxPhp/commentFetch.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ajaxPhp/fetchCommentAjax.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ajaxPhp/fetch_likes_dislikes.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajaxPhp/commentInsertAjax.php" afterPath="$PROJECT_DIR$/ajaxPhp/commentInsertAjax.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajaxPhp/dislikeAjax.php" afterPath="$PROJECT_DIR$/ajaxPhp/dislikeAjax.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajaxPhp/likeAjax.php" afterPath="$PROJECT_DIR$/ajaxPhp/likeAjax.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajaxPhp/replyInsertAjax.php" afterPath="$PROJECT_DIR$/ajaxPhp/replyInsertAjax.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/articleFetch.php" afterPath="$PROJECT_DIR$/articleFetch.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/commentForm.css" afterPath="$PROJECT_DIR$/css/commentForm.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/register.css" afterPath="$PROJECT_DIR$/css/register.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard.php" afterPath="$PROJECT_DIR$/dashboard.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dislikes.php" afterPath="$PROJECT_DIR$/dislikes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/formhide.js" afterPath="$PROJECT_DIR$/js/formhide.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/like.php" afterPath="$PROJECT_DIR$/like.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login.php" afterPath="$PROJECT_DIR$/login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/register.php" afterPath="$PROJECT_DIR$/register.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/registrationForm.php" afterPath="$PROJECT_DIR$/registrationForm.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/replycomment.php" afterPath="$PROJECT_DIR$/replycomment.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/results.php" afterPath="$PROJECT_DIR$/results.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/session.php" afterPath="$PROJECT_DIR$/session.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/timeAgo.php" afterPath="$PROJECT_DIR$/timeAgo.php" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,20 +76,18 @@
     <favorites_list name="blog" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file leaf-file-name="articleFetch.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/articleFetch.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="248" column="51" lean-forward="false" selection-start-line="248" selection-start-column="51" selection-end-line="248" selection-end-column="51" />
+            <state relative-caret-position="15133">
+              <caret line="409" column="75" lean-forward="false" selection-start-line="409" selection-start-column="75" selection-end-line="409" selection-end-column="75" />
               <folding>
-                <marker date="1597826107979" expanded="true" signature="118:156" ph="SELECT * FRO... article" />
-                <marker date="1597826107979" expanded="true" signature="1856:1944" ph="select count... like_table" />
-                <marker date="1597826107979" expanded="true" signature="2903:2997" ph="select count... dislike_table" />
-                <marker date="1597826107979" expanded="true" signature="5131:5280" ph="select * fro... comments" />
-                <marker date="1597826107979" expanded="true" signature="5131:5281" ph="select * fro... comments" />
-                <marker date="1597826107979" expanded="true" signature="7444:7740" ph="SELECT DISTI... reply" />
-                <marker date="1597826107979" expanded="true" signature="7444:7741" ph="SELECT DISTI... reply" />
+                <marker date="1606764326632" expanded="true" signature="117:155" ph="SELECT * FRO... article" />
+                <marker date="1606764326632" expanded="true" signature="4336:4427" ph="SELECT count... like_table" />
+                <marker date="1606764326632" expanded="true" signature="5190:5287" ph="SELECT count... dislike_table" />
+                <marker date="1606764326632" expanded="true" signature="7291:7435" ph="SELECT * fro... comments" />
+                <marker date="1606764326632" expanded="true" signature="9679:9975" ph="SELECT DISTI... reply" />
               </folding>
             </state>
           </provider>
@@ -78,7 +99,7 @@
             <state relative-caret-position="333">
               <caret line="9" column="33" lean-forward="false" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
               <folding>
-                <marker date="1596268746398" expanded="true" signature="327:510" ph="INSERT INTO reply" />
+                <marker date="1604127735324" expanded="true" signature="319:326" ph="..." />
               </folding>
             </state>
           </provider>
@@ -123,6 +144,9 @@
       <find>row_hide</find>
       <find>commentInsert</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -201,7 +225,7 @@
     <option name="height" value="1048" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -214,27 +238,10 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scratches" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../lsapp" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -425,11 +432,12 @@
       <workItem from="1597736211624" duration="1599000" />
       <workItem from="1597820687605" duration="378000" />
       <workItem from="1597821095874" duration="4311000" />
+      <workItem from="1607887737091" duration="40000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="227129000" />
+    <option name="totallyTimeSpent" value="227169000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -448,7 +456,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32842582" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16756175" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973147" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -676,13 +684,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ajaxPhp/commentFetch.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ajaxPhp/commentFetch.php" />
     <entry file="file://$PROJECT_DIR$/like/index.php" />
     <entry file="file://$PROJECT_DIR$/replycomment.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -756,15 +758,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1073">
           <caret line="29" column="92" lean-forward="false" selection-start-line="29" selection-start-column="92" selection-end-line="29" selection-end-column="92" />
-          <folding>
-            <marker date="1597569864070" expanded="true" signature="254:353" ph="select * fro... dislike_table" />
-            <marker date="1597569864070" expanded="true" signature="458:482" ph="SELECT * FRO... like_table" />
-            <marker date="1597569864070" expanded="true" signature="672:723" ph="delete from " />
-            <marker date="1597569864070" expanded="true" signature="672:750" ph="delete from " />
-            <marker date="1597569864070" expanded="true" signature="907:1024" ph="insert into dislike_table... " />
-            <marker date="1597569864070" expanded="true" signature="1072:1120" ph="delete from " />
-            <marker date="1597569864070" expanded="true" signature="1072:1147" ph="delete from " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -772,15 +765,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1147">
           <caret line="31" column="131" lean-forward="false" selection-start-line="31" selection-start-column="131" selection-end-line="31" selection-end-column="131" />
-          <folding>
-            <marker date="1597569863933" expanded="true" signature="266:376" ph="SELECT * FRO... like_table" />
-            <marker date="1597569863933" expanded="true" signature="468:495" ph="SELECT * FRO... dislike_table" />
-            <marker date="1597569863933" expanded="true" signature="703:751" ph="delete from " />
-            <marker date="1597569863933" expanded="true" signature="703:778" ph="delete from " />
-            <marker date="1597569863933" expanded="true" signature="907:1017" ph="insert into like_table... " />
-            <marker date="1597569863933" expanded="true" signature="1075:1127" ph="delete from " />
-            <marker date="1597569863933" expanded="true" signature="1075:1154" ph="delete from " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -788,17 +772,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="740">
           <caret line="20" column="120" lean-forward="false" selection-start-line="20" selection-start-column="120" selection-end-line="20" selection-end-column="120" />
-          <folding>
-            <marker date="1597569792856" expanded="true" signature="254:312" ph="select * fro... dislike_table" />
-            <marker date="1597569792856" expanded="true" signature="254:353" ph="select * fro... dislike_table" />
-            <marker date="1597569792856" expanded="true" signature="458:482" ph="SELECT * FRO... like_table" />
-            <marker date="1597569792856" expanded="true" signature="672:723" ph="delete from " />
-            <marker date="1597569792856" expanded="true" signature="672:750" ph="delete from " />
-            <marker date="1597569792856" expanded="true" signature="907:1024" ph="insert into dislike_table... " />
-            <marker date="1597569792856" expanded="true" signature="1072:1101" ph="delete from " />
-            <marker date="1597569792856" expanded="true" signature="1072:1120" ph="delete from " />
-            <marker date="1597569792856" expanded="true" signature="1072:1147" ph="delete from " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -806,33 +779,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1332">
           <caret line="36" column="7" lean-forward="false" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="7" />
-          <folding>
-            <marker date="1597569864116" expanded="true" signature="274:362" ph="SELECT * FRO... like_table" />
-            <marker date="1597569864116" expanded="true" signature="274:384" ph="SELECT * FRO... like_table" />
-            <marker date="1597569864116" expanded="true" signature="476:503" ph="SELECT * FRO... dislike_table" />
-            <marker date="1597569864116" expanded="true" signature="711:759" ph="delete from " />
-            <marker date="1597569864116" expanded="true" signature="711:786" ph="delete from " />
-            <marker date="1597569864116" expanded="true" signature="915:1025" ph="insert into like_table... " />
-            <marker date="1597569864116" expanded="true" signature="1082:1155" ph="delete from " />
-            <marker date="1597569864116" expanded="true" signature="1082:1181" ph="delete from " />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ajaxPhp/fetch_likes_dislikes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <marker date="1597652335119" expanded="true" signature="129:167" ph="SELECT * FRO... article" />
-            <marker date="1597652335119" expanded="true" signature="1887:1975" ph="select count... like_table" />
-            <marker date="1597652335119" expanded="true" signature="2740:2834" ph="select count... dislike_table" />
-            <marker date="1597652335119" expanded="true" signature="4977:5131" ph="select * fro... comments" />
-            <marker date="1597652335119" expanded="true" signature="7300:7601" ph="SELECT DISTI... reply" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ajaxPhp/fetch_likes_dislikes.php" />
     <entry file="dbDummy://dbtable:/b6f8ec9a/9455ae99-9388-4367-b1ff-b915596beb46/blog.reply">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -850,9 +800,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="372">
           <caret line="11" column="28" lean-forward="true" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
-          <folding>
-            <marker date="1595755563386" expanded="true" signature="367:498" ph="INSERT INTO comments... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -861,23 +808,21 @@
         <state relative-caret-position="333">
           <caret line="9" column="33" lean-forward="false" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
           <folding>
-            <marker date="1596268746398" expanded="true" signature="327:510" ph="INSERT INTO reply" />
+            <marker date="1604127735324" expanded="true" signature="319:326" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/articleFetch.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="248" column="51" lean-forward="false" selection-start-line="248" selection-start-column="51" selection-end-line="248" selection-end-column="51" />
+        <state relative-caret-position="15133">
+          <caret line="409" column="75" lean-forward="false" selection-start-line="409" selection-start-column="75" selection-end-line="409" selection-end-column="75" />
           <folding>
-            <marker date="1597826107979" expanded="true" signature="118:156" ph="SELECT * FRO... article" />
-            <marker date="1597826107979" expanded="true" signature="1856:1944" ph="select count... like_table" />
-            <marker date="1597826107979" expanded="true" signature="2903:2997" ph="select count... dislike_table" />
-            <marker date="1597826107979" expanded="true" signature="5131:5280" ph="select * fro... comments" />
-            <marker date="1597826107979" expanded="true" signature="5131:5281" ph="select * fro... comments" />
-            <marker date="1597826107979" expanded="true" signature="7444:7740" ph="SELECT DISTI... reply" />
-            <marker date="1597826107979" expanded="true" signature="7444:7741" ph="SELECT DISTI... reply" />
+            <marker date="1606764326632" expanded="true" signature="117:155" ph="SELECT * FRO... article" />
+            <marker date="1606764326632" expanded="true" signature="4336:4427" ph="SELECT count... like_table" />
+            <marker date="1606764326632" expanded="true" signature="5190:5287" ph="SELECT count... dislike_table" />
+            <marker date="1606764326632" expanded="true" signature="7291:7435" ph="SELECT * fro... comments" />
+            <marker date="1606764326632" expanded="true" signature="9679:9975" ph="SELECT DISTI... reply" />
           </folding>
         </state>
       </provider>

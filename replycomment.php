@@ -24,8 +24,6 @@ if (isset($_POST['replyButton']) && !empty($_SESSION['loginid'])) {
 
 } else {
     echo "Error";
-
-
 }
 
 

@@ -13,6 +13,7 @@ include("session.php");
     <meta name="viewport" content="width=device-width">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Blog</title>
+    <link rel = "icon" href ="images/favicon.jpg" type = "image/x-icon" style="background: transparent;"> 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- <link rel="stylesheet" href="css/bootstrap-toggle.min.css">
     <link rel="stylesheet" href="css/darkmode.css"> -->
@@ -54,17 +55,18 @@ include("session.php");
                 <div class="dropdown">
                     <a type="text" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false">
-                        <i class="fa fa-user-circle fa-lg user-icon" aria-hidden="true" style="cursor: pointer;"></i>
+                        <i class="fa fa-user-circle fa-lg user-icon"  aria-hidden="true" style="cursor: pointer;"></i>
                     </a>
                     <?php
 
                     if (isset($_SESSION['userName'])) {
-                    ?>
+                        ?>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <span class="dropdown-item"><?php echo $_SESSION['userName']; ?></span>
+                        <span class="dropdown-item" id="get_initials"><?php echo $_SESSION['userName']; ?></span>
                         <a class="text-danger dropdown-item" href="insertForm.php">Write Views</a>
 
-                        <?php } ?>
+                        <?php
+                    } ?>
                         <a class="dropdown-item" href="logout.php">Logout</a>
 
                     </div>
@@ -89,18 +91,36 @@ include("session.php");
         <div class='col-md-8'>
 
             <?php
+            $results_per_page = 2;
+            $query = mysqli_query($con, "SELECT * FROM article");
+            $number_of_results = mysqli_num_rows($query);
 
-            $query = mysqli_query($con, "SELECT * FROM article INNER JOIN register ON 
-                article.userid = register.userid");
+            //number of pages
+            $number_of_pages = ceil($number_of_results / $results_per_page);
 
-            while ($row = mysqli_fetch_array($query)) {
+            //determine which page number the user is on
+            if (!isset($_GET['page'])) {
+                $page = 1;
+            } else {
+                $page = $_GET['page'];
+            }
+            // determine the sql LIMIT starting number for the results on the displaying page
+            $this_page_first_result = ($page-1)*$results_per_page;
+
+            $sql = 'SELECT * FROM article INNER JOIN register ON
+                article.userid = register.userid limit '. $this_page_first_result.','.$results_per_page;
+            $page_query = mysqli_query($con, $sql);
+            
+            while ($row = mysqli_fetch_array($page_query)) {
+                $article_id = $row['id'];
                 $firstname = $row['firstname'];
+                $_SESSION['fname'] = $firstname;
+                
                 $lastname = $row['lastname'];
+                $_SESSION['lname'] = $lastname;
 
-                // $id = md5($row['id']);
                 $fileName = $row['articlename'];
                 $imagePath = $row['imagepath'];
-
                 $articleContent = $row['articlecontent'];
 
                 $readFile = fopen($articleContent, 'r');
@@ -114,29 +134,46 @@ include("session.php");
                                 class='img-thumbnail img-fluid float-left'
                                     style='width: 150px; height: 100px; margin-top: 39px'></td>"; ?>
 
-                <td>
-                    <h3 class="text-danger"><?php echo "<br>" . $fileName; ?></h3>
-                    <p class="text-justify"><?php echo mb_strimwidth($read, 0, 300, '...'); ?>
+             <td>
+                 <!-- <h3 class="text-danger"><?php echo "<br>" . $fileName; ?></h3> -->
+                 <!-- <p class="text-justify"><?php echo mb_strimwidth($read, 0, 300, '...'); ?> -->
 
-                        <a href="articleFetch.php?id=<?php echo $row['id']; ?>">Read More</a>
+                     <!-- <h3 class="text-danger"><a href="articleFetch.php?id=<?php echo $row['id']; ?>">Read More</a></h3> -->
+            <h4 class="text-danger"><a href="articleFetch.php?id=<?php echo $row['id']; ?>" 
+                            class="link_rem"><?php echo "<br>" . $fileName; ?></a></h4>
 
-                    </p>
+                 </p>
 
-                    <div class="font-weight-bold">
-                        By: <?php echo $firstname . ' ' . $lastname; ?>
-                    </div>
-                </td>
-
+                <div class="font-weight-bold">
+                    By: <?php echo $firstname . ' ' . $lastname; ?>
+                </div>
 
                 <?php
+                    $comm_query = mysqli_query($con, "SELECT count(comment) from comments where articleid = '$article_id'");
+                $comment_count = mysqli_fetch_array($comm_query);
+                echo '<br><span>'.$comment_count[0].' Comments</span>'; ?>
+                    
+                </td>
+
+                 <?php
                 echo "</tr>
                 </table>";
             }
             ?>
 
+            <div aria-label="..." class="col-sm-6">
+                <ul class="pagination">
+                    <?php
+                    // display the links to the pages
+                     for ($page = 1; $page <= $number_of_pages; $page++) {
+                         echo '<li class="page-item"><a class="page-link" href="dashboard.php?page=' . $page . '">' . $page . '</a></li> ';
+                     }
+
+                    ?>
+                </ul>
+            </div>
+
         </div>
-
-
     </div>
 </div>
 

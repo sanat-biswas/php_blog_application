@@ -24,6 +24,9 @@ if (isset($_COOKIE['usercookie']) && !empty($_COOKIE['usercookie'])) {
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
     <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
 
@@ -31,42 +34,53 @@ if (isset($_COOKIE['usercookie']) && !empty($_COOKIE['usercookie'])) {
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/formhide.js"></script>
     <script type="text/javascript" src="js/register.js"></script>
-
-
 </head>
 <body>
 <div class="container">
+
+    <div id="buttons">
+        <button class="btn btn-light" id="show_login">Login</button>
+        <button class="btn btn-light" id="show_registrationform">Register</button>
+    </div>
 
     <!-- //login Form -->
 
     <form id="loginForm" name="formLogin" action="login.php"
           method="post" onsubmit="return login()">
-        <div class="row">
+        <div class="row" id="form">
             <div class="col-md-6">
                 <div class="alert" id="msg"></div>
                 <h3 class="text-warning">Login</h3>
                 <div class="form-group">
+                    <label for="loginuserName" class="control-label">Username</label>
+                    <div class="input-group">
 
-
-                    <label for="loginuserName">Username</label>
-                    <input type="text" name="userName" id="loginuserName" class="form-control"
-                           autocomplete="off">
+                        <input type="text" name="userName" id="loginuserName" class="form-control"
+                        autocomplete="off">
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="loginpassword">Password</label>
-                    <input type="password" name="password" class="form-control" id="loginpassword"
-                           autocomplete="off">
-                </div>
+                    <div class="input-group">
 
-                <div class=" form-check">
+                       
+                        <input type="password" name="password" class="form-control" id="loginpassword"
+                           autocomplete="off">
+                    </div>
+                </div>
+                <div class="">
+                    <button type="submit" name="loginButton" class="btn btn-primary btn-sm" id="loginButton">Login</button>
+                </div>
+                <br>
+
+                <div class="form-check">
                     <input type="checkbox" name="rememberme" id="rememberme" class="form-check-input">
                     <label for="rememberme" style="cursor: pointer;">Remember Me</label>
                 </div>
-                <button type="submit" name="loginButton" class="btn btn-primary btn-sm">Login</button>
 
-                <div class="text-success hasAccountText">
+                <!-- <div class="text-success hasAccountText">
                     <span id="hideLogin">Dont have an account yet ? Sign Up here.</span>
-                </div>
+                </div> -->
                 <a href="forgetPasswordForm.php">
                     <span class="text-success forgetPassword">Forget Password</span></a>
             </div>
@@ -123,9 +137,9 @@ if (isset($_COOKIE['usercookie']) && !empty($_COOKIE['usercookie'])) {
 
                 <button type="submit" name="registerButton" class="btn btn-primary btn-sm">Confirm</button>
 
-                <div class="text-danger hasAccountText">
+                <!-- <div class="text-danger hasAccountText">
                     <span id="hideRegister">Already have an account ? Log In here.</span>
-                </div>
+                </div> -->
             </div>
 
         </div>
