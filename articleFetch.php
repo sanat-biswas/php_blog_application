@@ -148,10 +148,13 @@ while ($row = mysqli_fetch_array($query)) {
 
                     if (mysqli_num_rows($follower_query) > 0) {
                         $follow_user = mysqli_fetch_array($follower_query);
+                        if ($follow_user) {
+                            $name = $follow_user['username'];
+                            echo $name;
+                            echo $_SESSION['userName'];
 
-                        $name = $follow_user['username'];
-                        if ($name == $_SESSION['userName']) {
-                            echo '
+                            if ($name == $_SESSION['userName']) {
+                                echo '
                             <!-- follow -->
                             <div class="form-group">
                                 <form action="follow.php" method="post">
@@ -161,16 +164,18 @@ while ($row = mysqli_fetch_array($query)) {
                                 </form>
                             </div>
                             ';
-                        } else {
-                            echo '<div class="form-group">
+                            } else {
+                                echo '<div class="form-group">
                                 <form action="follow.php" method="post">
                                     <input type="hidden" name="status" value="0">
                                     <a href="follow.php" class="btn btn-outline-success follow_user" 
                                             id="follow_user" name="follow_user">Follow</a>
                                 </form>
                             </div>';
+                            }
                         }
                     }
+                    
 
                         
                 ?>

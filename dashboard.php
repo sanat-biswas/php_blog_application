@@ -135,12 +135,11 @@ error_reporting(E_ALL & ~E_NOTICE)
                 
                 $articleContent = $row['articlecontent'];
                 $readFile = fopen($articleContent, 'r');
-                if (filesize($articleContent) > 0 ) {
-                    $read = fread($readFile, filesize($articleContent));
+                $file_size = filesize($articleContent);
+                if ($file_size > 0) {
+                    $read = fread($readFile, $file_size);
                     echo "<table class='table table-responsive' id='table_border'>
                       <tr><td>
-                      
-                      
                       <img src='$imagePath' alt=''
                                 class='img-thumbnail img-fluid float-left'
                                     style='width: 150px; height: 100px; margin-top: 39px'></td>"; ?>
