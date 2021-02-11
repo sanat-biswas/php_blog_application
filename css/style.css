@@ -46,3 +46,15 @@ html, body{
 .link_rem{
   color: black;
 }
+
+/* #table_border{
+  border: 1px solid red;
+  border-radius: 10px;
+} */
+
+#table_border {
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
+  -webkit-box-shadow: -2px -1px 5px 5px rgba(0,0,0,0.5);
+  -moz-box-shadow: -3px -2px 5px 5px rgba(0,0,0,0.425);
+  box-shadow: -4px -3px 5px 5px rgba(0,0,0,0.35);
+}

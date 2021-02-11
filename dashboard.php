@@ -3,6 +3,7 @@ session_start();
 include("config.php");
 
 include("session.php");
+error_reporting(E_ALL & ~E_NOTICE)
 
 ?>
 
@@ -31,10 +32,6 @@ include("session.php");
 <body id="body">
 
 <div class="container-fluid">
-    <!-- <div class="form-group">
-      <button class="toggle" data-toggle="toggle" onchange="darkMode()"></button>
-    </div> -->
-
     <nav class="navbar navbar-expand-lg navbar-light" id="bgcolor">
         <a class="navbar-brand" href="dashboard.php">Blog</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -88,10 +85,24 @@ include("session.php");
 
     <div class="row">
 
+        <div class="col-md-2">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><i class="fa fa-home fa-lg user-icon"  aria-hidden="true" style="padding: 2px;"></i><a href="">Home</a></li>
+                <li class="list-group-item table table-striped"><a href="">Reading List</a></li>
+                <li class="list-group-item"><a href="">Listings</a></li>
+                <li class="list-group-item"><a href="">Tags</a></li>
+                <li class="list-group-item"><a href="">FAQ</a></li>
+                <li class="list-group-item"><a href="">About</a></li>
+                <li class="list-group-item"><a href="">Privacy Policy</a></li>
+                <li class="list-group-item"><a href="">Terms of use</a></li>
+                <li class="list-group-item"><a href="">Contact</a></li>
+            </ul>
+        </div>
+
         <div class='col-md-8'>
 
             <?php
-            $results_per_page = 2;
+            $results_per_page = 3;
             $query = mysqli_query($con, "SELECT * FROM article");
             $number_of_results = mysqli_num_rows($query);
 
@@ -121,14 +132,14 @@ include("session.php");
 
                 $fileName = $row['articlename'];
                 $imagePath = $row['imagepath'];
+                
                 $articleContent = $row['articlecontent'];
-
                 $readFile = fopen($articleContent, 'r');
-
-                $read = fread($readFile, filesize($articleContent));
-
-                echo "<table class='table table-responsive'>
+                if (filesize($articleContent) > 0 ) {
+                    $read = fread($readFile, filesize($articleContent));
+                    echo "<table class='table table-responsive' id='table_border'>
                       <tr><td>
+                      
                       
                       <img src='$imagePath' alt=''
                                 class='img-thumbnail img-fluid float-left'
@@ -139,25 +150,24 @@ include("session.php");
                  <!-- <p class="text-justify"><?php echo mb_strimwidth($read, 0, 300, '...'); ?> -->
 
                      <!-- <h3 class="text-danger"><a href="articleFetch.php?id=<?php echo $row['id']; ?>">Read More</a></h3> -->
-            <h4 class="text-danger"><a href="articleFetch.php?id=<?php echo $row['id']; ?>" 
-                            class="link_rem"><?php echo "<br>" . $fileName; ?></a></h4>
+                     <div class='font-weight-bold'>
+                        <?php echo $firstname.' '.  $lastname; ?>
+                    </div>
+                    <h4 class="text-danger"><a href="articleFetch.php?id=<?php echo $row['id']; ?>" class="link_rem"><?php echo "<br>" . $fileName; ?></a></h4>
 
                  </p>
 
-                <div class="font-weight-bold">
-                    By: <?php echo $firstname . ' ' . $lastname; ?>
-                </div>
-
                 <?php
                     $comm_query = mysqli_query($con, "SELECT count(comment) from comments where articleid = '$article_id'");
-                $comment_count = mysqli_fetch_array($comm_query);
-                echo '<br><span>'.$comment_count[0].' Comments</span>'; ?>
+                    $comment_count = mysqli_fetch_array($comm_query);
+                    echo '<br><span>'.$comment_count[0].' Comments</span>'; ?>
                     
                 </td>
 
                  <?php
                 echo "</tr>
                 </table>";
+                }
             }
             ?>
 

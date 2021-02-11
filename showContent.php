@@ -19,8 +19,7 @@ if (isset($_POST['submit']) && !empty($_SESSION['loginid'])) {
     move_uploaded_file($imagetmpName, $imagePath);
     $writeFile = fwrite($file, $articleContent);
 
-    $query = mysqli_query($con, "INSERT INTO article(articlename, articlecontent, imagepath, userid)
-                                  VALUES('$articleName', '$fileName', '$imagePath', '" . $_SESSION['loginid'] . "')");
+    $query = mysqli_query($con, "INSERT INTO article(articlename, articlecontent, imagepath, userid) VALUES('$articleName', '$fileName', '$imagePath', '" . $_SESSION['loginid'] . "')");
 
     if ($query) {
         header("location: dashboard.php");
