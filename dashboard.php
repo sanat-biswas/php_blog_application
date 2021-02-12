@@ -150,7 +150,7 @@ error_reporting(E_ALL & ~E_NOTICE)
 
                      <!-- <h3 class="text-danger"><a href="articleFetch.php?id=<?php echo $row['id']; ?>">Read More</a></h3> -->
                      <div class='font-weight-bold'>
-                        <?php echo $firstname.' '.  $lastname; ?>
+                        <?php echo $firstname.' '.  $lastname ; ?>
                     </div>
                     <h4 class="text-danger"><a href="articleFetch.php?id=<?php echo $row['id']; ?>" class="link_rem"><?php echo "<br>" . $fileName; ?></a></h4>
 

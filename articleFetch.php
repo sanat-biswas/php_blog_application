@@ -92,16 +92,24 @@ while ($row = mysqli_fetch_array($query)) {
     <div class="row">
         <div class=" col-md-10 mx-auto">
             <div id="hide_article">
+
+            <?php
+                $article_author_query = mysqli_query($con, "SELECT article.*, register.* from article inner join register on article.userid = register.userid and article.id = '$id'");
+
+                if(mysqli_num_rows($article_author_query) > 0){
+                    $article_author = mysqli_fetch_array($article_author_query);
+                    $first_name = $article_author['firstname'];
+                    $last_name = $article_author['lastname'];
+                    echo '<p class="text-danger font-weight-bold">Author: '.$first_name.' '.$last_name.'</p>';
+                }
+            ?>
                 <h3 class="text-danger"><?php echo $fileName; ?></h3>
                 <img src='<?php echo $imagePath; ?>' alt=''
                                 class='img-thumbnail img-fluid float-left'>
                 <div class="text-dark font_name"><?php echo $read; ?></div>
 
-                <?php
-
-                fclose($readFile);
-}
-                ?>
+                <?php fclose($readFile);
+}?>
             </div>
             <div style="cursor: pointer;" id="article_likes">
                
@@ -144,40 +152,30 @@ while ($row = mysqli_fetch_array($query)) {
 
                 <?php
 
-                    $follower_query = mysqli_query($con, "select article.*, register.* from article inner join register where article.userid = register.userid");
-
+                    $follower_query = mysqli_query($con, "SELECT article.*, register.* from article join register on article.userid = register.userid and article.id = '$id'");
+                    
                     if (mysqli_num_rows($follower_query) > 0) {
-                        $follow_user = mysqli_fetch_array($follower_query);
-                        if ($follow_user) {
-                            $name = $follow_user['username'];
-                            echo $name;
-                            echo $_SESSION['userName'];
+                        while ($follow_user = mysqli_fetch_array($follower_query)) {
 
-                            if ($name == $_SESSION['userName']) {
+                            if ($_SESSION['userName'] == $follow_user['username']) {
                                 echo '
                             <!-- follow -->
                             <div class="form-group">
-                                <form action="follow.php" method="post">
-                                    <input type="hidden" name="status" value="0">
-                                    <input type="submit" name="follow_user" id=""
-                                            class="btn btn-warning" value="Followers">
-                                </form>
+                                    <button type="submit" name="follow_user" id=""
+                                            class="btn btn-warning" disabled>Followers</button>
                             </div>
                             ';
                             } else {
                                 echo '<div class="form-group">
                                 <form action="follow.php" method="post">
                                     <input type="hidden" name="status" value="0">
-                                    <a href="follow.php" class="btn btn-outline-success follow_user" 
-                                            id="follow_user" name="follow_user">Follow</a>
+                                    <a href="follow.php" class="btn btn-outline-success follow_user" id="follow_user" name="follow_user">Follow</a>
                                 </form>
                             </div>';
                             }
                         }
                     }
                     
-
-                        
                 ?>
 
                 
