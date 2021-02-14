@@ -83,21 +83,20 @@ error_reporting(E_ALL & ~E_NOTICE)
     </nav>
 
 
-    <div class="row">
-
-        <div class="col-md-2">
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item"><i class="fa fa-home fa-lg user-icon"  aria-hidden="true" style="padding: 2px;"></i><a href="">Home</a></li>
-                <li class="list-group-item table table-striped"><a href="">Reading List</a></li>
-                <li class="list-group-item"><a href="">Listings</a></li>
-                <li class="list-group-item"><a href="">Tags</a></li>
-                <li class="list-group-item"><a href="">FAQ</a></li>
-                <li class="list-group-item"><a href="">About</a></li>
-                <li class="list-group-item"><a href="">Privacy Policy</a></li>
-                <li class="list-group-item"><a href="">Terms of use</a></li>
-                <li class="list-group-item"><a href="">Contact</a></li>
+    <div class="row" id="row-id">
+        <aside>
+            <ul class="" id="list-style">
+                <li class=""><a href="">Home</a></li>
+                <li class=" "><a href="readinglist.php">Reading List</a></li>
+                <li class=""><a href="">Listings</a></li>
+                <li class=""><a href="">Tags</a></li>
+                <li class=""><a href="">FAQ</a></li>
+                <li class=""><a href="">About</a></li>
+                <li class=""><a href="">Privacy Policy</a></li>
+                <li class=""><a href="">Terms of use</a></li>
+                <li class=""><a href="">Contact</a></li>
             </ul>
-        </div>
+        </aside>
 
         <div class='col-md-8'>
 
@@ -124,6 +123,7 @@ error_reporting(E_ALL & ~E_NOTICE)
             
             while ($row = mysqli_fetch_array($page_query)) {
                 $article_id = $row['id'];
+
                 $firstname = $row['firstname'];
                 $_SESSION['fname'] = $firstname;
                 
@@ -160,6 +160,8 @@ error_reporting(E_ALL & ~E_NOTICE)
                     $comm_query = mysqli_query($con, "SELECT count(comment) from comments where articleid = '$article_id'");
                     $comment_count = mysqli_fetch_array($comm_query);
                     echo '<br><span>'.$comment_count[0].' Comments</span>'; ?>
+
+                    <button type="submit" class="btn" style="float: right;"><a href="saved_articles.php?article_id=<?php echo $article_id;?>" name="save-article">Save</a></button>
                     
                 </td>
 
@@ -188,3 +190,14 @@ error_reporting(E_ALL & ~E_NOTICE)
 
 </body>
 </html>
+
+<script>
+
+    function save_article(){
+
+        var save = 'save';
+        $.ajax({
+
+        })
+    }
+</script>

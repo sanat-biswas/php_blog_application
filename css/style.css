@@ -47,14 +47,28 @@ html, body{
   color: black;
 }
 
-/* #table_border{
-  border: 1px solid red;
-  border-radius: 10px;
-} */
-
 #table_border {
   -webkit-box-shadow: -2px -1px 5px 5px rgba(0,0,0,0.5);
   -moz-box-shadow: -3px -2px 5px 5px rgba(0,0,0,0.425);
   box-shadow: -4px -3px 5px 5px rgba(0,0,0,0.35);
   border-radius: 20px;
+}
+
+#list-style li{
+  list-style-type: none;
+  margin: 0 0 10px 0;
+}
+
+#list-style :hover{
+  text-decoration: none;
+  background-color: antiquewhite;
+}
+
+aside{
+  margin-right: 5rem;
+  padding-left: .5rem;
+}
+
+#row-id{
+  margin: 25px 0;
 }

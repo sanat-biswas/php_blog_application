@@ -7,6 +7,9 @@ $id = $_GET['id'];         //article id
 $query = mysqli_query($con, "SELECT * FROM article WHERE id = '$id'");
 while ($row = mysqli_fetch_array($query)) {
     $_SESSION['articleid'] = $id;
+
+    print_r($_SESSION);
+    
     $fileName = $row['articlename'];
     $articleContent = $row['articlecontent'];
     $imagePath = $row['imagepath'];
