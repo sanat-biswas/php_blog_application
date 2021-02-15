@@ -8,8 +8,6 @@ $query = mysqli_query($con, "SELECT * FROM article WHERE id = '$id'");
 while ($row = mysqli_fetch_array($query)) {
     $_SESSION['articleid'] = $id;
 
-    print_r($_SESSION);
-    
     $fileName = $row['articlename'];
     $articleContent = $row['articlecontent'];
     $imagePath = $row['imagepath'];
@@ -99,13 +97,12 @@ while ($row = mysqli_fetch_array($query)) {
             <?php
                 $article_author_query = mysqli_query($con, "SELECT article.*, register.* from article inner join register on article.userid = register.userid and article.id = '$id'");
 
-                if(mysqli_num_rows($article_author_query) > 0){
-                    $article_author = mysqli_fetch_array($article_author_query);
-                    $first_name = $article_author['firstname'];
-                    $last_name = $article_author['lastname'];
-                    echo '<p class="text-danger font-weight-bold">Author: '.$first_name.' '.$last_name.'</p>';
-                }
-            ?>
+    if (mysqli_num_rows($article_author_query) > 0) {
+        $article_author = mysqli_fetch_array($article_author_query);
+        $first_name = $article_author['firstname'];
+        $last_name = $article_author['lastname'];
+        echo '<p class="text-danger font-weight-bold">Author: '.$first_name.' '.$last_name.'</p>';
+    } ?>
                 <h3 class="text-danger"><?php echo $fileName; ?></h3>
                 <img src='<?php echo $imagePath; ?>' alt=''
                                 class='img-thumbnail img-fluid float-left'>
@@ -159,7 +156,6 @@ while ($row = mysqli_fetch_array($query)) {
                     
                     if (mysqli_num_rows($follower_query) > 0) {
                         while ($follow_user = mysqli_fetch_array($follower_query)) {
-
                             if ($_SESSION['userName'] == $follow_user['username']) {
                                 echo '
                             <!-- follow -->
