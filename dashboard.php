@@ -190,14 +190,3 @@ error_reporting(E_ALL & ~E_NOTICE)
 
 </body>
 </html>
-
-<script>
-
-    function save_article(){
-
-        var save = 'save';
-        $.ajax({
-
-        })
-    }
-</script>

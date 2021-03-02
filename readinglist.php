@@ -13,12 +13,13 @@ session_start();
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        
+    <h1 class="text-capitalize text-center" style="padding-top: 50px;">Reading List</h1>
+
     <?php
 
     $id = $_SESSION['loginid'];
 
-    $select_saved_articles = mysqli_query($con, "SELECT * from saved_articles inner join register, article where  saved_articles.articleid = article.id and saved_articles.userid = '$id'");
+    $select_saved_articles = mysqli_query($con, "SELECT * from saved_articles inner join register, article where  saved_articles.articleid = article.id  and saved_articles.userid = '$id'");
 
     if (mysqli_num_rows($select_saved_articles) > 0) {
         while ($row = mysqli_fetch_array($select_saved_articles)) {

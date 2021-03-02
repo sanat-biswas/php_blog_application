@@ -1,4 +1,6 @@
-
+<?php
+    session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +20,7 @@
 <body>
     
     <div class="container">
-
+    <?php echo $_SESSION['otpVerify']; ?>
         <form action="confirmRegisterDetails.php" method="post">
             <div class="row">
                 <div class="col-md-6">
